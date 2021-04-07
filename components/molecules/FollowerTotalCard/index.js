@@ -7,6 +7,11 @@ import DownIcon from "../../../public/icon-down.svg";
 const FollowerTotalCard = ({ isComingDown }) => {
   return (
     <BaseCard>
+      <div
+        className={["h-1 absolute w-full left-0 top-0", "bg-blue-400"].join(
+          " "
+        )}
+      ></div>
       <figure className="flex justify-center items-center">
         <img className="mr-2" src={FacebookIcon} alt="facebook icon" />
         <figcaption className="font-semibold text-sm">@nathanf</figcaption>

@@ -14,11 +14,15 @@ const FollowerTotalCard = ({ isComingDown }) => {
       ></div>
       <figure className="flex justify-center items-center">
         <img className="mr-2" src={FacebookIcon} alt="facebook icon" />
-        <figcaption className="font-semibold text-sm">@nathanf</figcaption>
+        <figcaption className="font-semibold text-sm dark:text-gray-400">
+          @nathanf
+        </figcaption>
       </figure>
       <div className="py-4">
-        <h3 className="text-center text-7xl font-semibold">1987</h3>
-        <p className="font-mono text-center text-gray-500 tracking-widest ">
+        <h3 className="text-center text-7xl font-semibold dark:text-white">
+          1987
+        </h3>
+        <p className="font-mono text-center text-gray-400 tracking-widest ">
           FOLLOWERS
         </p>
       </div>

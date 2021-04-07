@@ -8,11 +8,11 @@ const FollowerOverviewCard = ({ isComingDown }) => {
   return (
     <BaseCard>
       <figure className="flex justify-between items-center mb-3">
-        <figcaption>Page Views</figcaption>
+        <figcaption class="dark:text-gray-300">Likes</figcaption>
         <img src={FacebookIcon} alt="facebook icon" />
       </figure>
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-4xl">87</p>
+        <p className="font-semibold text-4xl dark:text-white">87</p>
         <p className="flex justify-center items-center">
           <img src={isComingDown ? DownIcon : UpIcon} alt="icon up" />
           <p

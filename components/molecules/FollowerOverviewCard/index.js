@@ -1,27 +1,35 @@
 import PropTypes from "prop-types";
 import BaseCard from "../../atoms/BaseCard";
-import FacebookIcon from "../../../public/icon-facebook.svg";
-import UpIcon from "../../../public/icon-up.svg";
-import DownIcon from "../../../public/icon-down.svg";
+import Icon from "../../atoms/Icon";
 
-const FollowerOverviewCard = ({ isComingDown }) => {
+const FollowerOverviewCard = ({
+  isComingDown,
+  title,
+  icon,
+  total,
+  percentage,
+}) => {
   return (
     <BaseCard>
       <figure className="flex justify-between items-center mb-3">
-        <figcaption class="dark:text-gray-300">Likes</figcaption>
-        <img src={FacebookIcon} alt="facebook icon" />
+        <figcaption className="dark:text-gray-300">{title} </figcaption>
+        {icon}
       </figure>
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-4xl dark:text-white">87</p>
+        <p className="font-semibold text-4xl dark:text-white">{total}</p>
         <p className="flex justify-center items-center">
-          <img src={isComingDown ? DownIcon : UpIcon} alt="icon up" />
+          {isComingDown ? (
+            <Icon svg="down" classes="w-2 mr-1" />
+          ) : (
+            <Icon svg="up" classes="w-2 mr-1" />
+          )}
           <p
             className={[
               isComingDown ? "text-red-500" : "text-green-500",
               "font-semibold",
             ].join(" ")}
           >
-            3%
+            {percentage}
           </p>
         </p>
       </div>
@@ -31,10 +39,10 @@ const FollowerOverviewCard = ({ isComingDown }) => {
 
 FollowerOverviewCard.propTypes = {
   isComingDown: PropTypes.bool,
-};
-
-FollowerOverviewCard.defaultprops = {
-  isComingDown: false,
+  title: PropTypes.string,
+  icon: PropTypes.node,
+  total: PropTypes.string,
+  percentage: PropTypes.string,
 };
 
 export default FollowerOverviewCard;

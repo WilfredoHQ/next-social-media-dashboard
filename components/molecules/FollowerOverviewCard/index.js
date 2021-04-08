@@ -29,7 +29,7 @@ const FollowerOverviewCard = ({
               "font-semibold",
             ].join(" ")}
           >
-            {percentage}
+            {percentage}%
           </p>
         </p>
       </div>

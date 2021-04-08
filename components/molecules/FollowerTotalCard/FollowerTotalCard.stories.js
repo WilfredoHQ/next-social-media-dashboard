@@ -10,9 +10,10 @@ const Template = (args) => <FollowerTotalCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  nickname: "asfsa",
-  icon: <Icon svg="facebook" classes="w-6 mr-2" />,
-  total: "287",
-  title: "followe",
-  quantity: "287 Today",
+  nickname: "@realnathanf",
+  icon: <Icon svg="instagram" classes="w-6 mr-2" />,
+  total: "11k",
+  title: "Followers",
+  quantity: "1099",
+  topLine: "bg-gradient-to-r from-yellow-400 to-pink-400",
 };

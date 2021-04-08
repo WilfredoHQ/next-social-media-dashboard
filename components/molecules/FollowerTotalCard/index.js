@@ -9,13 +9,12 @@ const FollowerTotalCard = ({
   total,
   title,
   quantity,
+  topLine,
 }) => {
   return (
     <BaseCard>
       <div
-        className={["h-1 absolute w-full left-0 top-0", "bg-blue-400"].join(
-          " "
-        )}
+        className={[topLine, "h-1 absolute w-full left-0 top-0"].join(" ")}
       ></div>
       <figure className="flex justify-center items-center">
         {icon}
@@ -43,7 +42,7 @@ const FollowerTotalCard = ({
             "text-sm font-bold",
           ].join(" ")}
         >
-          {quantity}
+          {quantity} Today
         </p>
       </p>
     </BaseCard>
@@ -57,6 +56,7 @@ FollowerTotalCard.propTypes = {
   total: PropTypes.string,
   title: PropTypes.string,
   quantity: PropTypes.string,
+  topLine: PropTypes.string,
 };
 
 export default FollowerTotalCard;

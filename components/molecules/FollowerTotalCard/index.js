@@ -1,10 +1,15 @@
 import PropTypes from "prop-types";
 import BaseCard from "../../atoms/BaseCard";
-import FacebookIcon from "../../../public/icon-facebook.svg";
-import UpIcon from "../../../public/icon-up.svg";
-import DownIcon from "../../../public/icon-down.svg";
+import Icon from "../../atoms/Icon";
 
-const FollowerTotalCard = ({ isComingDown }) => {
+const FollowerTotalCard = ({
+  isComingDown,
+  nickname,
+  icon,
+  total,
+  title,
+  quantity,
+}) => {
   return (
     <BaseCard>
       <div
@@ -13,24 +18,32 @@ const FollowerTotalCard = ({ isComingDown }) => {
         )}
       ></div>
       <figure className="flex justify-center items-center">
-        <img className="mr-2" src={FacebookIcon} alt="facebook icon" />
-        <figcaption className="font-semibold text-sm">@nathanf</figcaption>
+        {icon}
+        <figcaption className="font-semibold text-sm dark:text-gray-400">
+          {nickname}
+        </figcaption>
       </figure>
       <div className="py-4">
-        <h3 className="text-center text-7xl font-semibold">1987</h3>
-        <p className="font-mono text-center text-gray-500 tracking-widest ">
-          FOLLOWERS
+        <h3 className="text-center text-7xl font-semibold dark:text-white">
+          {total}
+        </h3>
+        <p className="font-mono text-center text-gray-400 tracking-widest uppercase">
+          {title}
         </p>
       </div>
-      <p className="flex justify-center items-center">
-        <img src={isComingDown ? DownIcon : UpIcon} alt="icon up" />
+      <p className="flex justify-center items-center ">
+        {isComingDown ? (
+          <Icon svg="down" classes="w-2 mr-1" />
+        ) : (
+          <Icon svg="up" classes="w-2 mr-1" />
+        )}
         <p
           class={[
             isComingDown ? "text-red-500" : "text-green-500",
             "text-sm font-bold",
           ].join(" ")}
         >
-          12 Today
+          {quantity}
         </p>
       </p>
     </BaseCard>
@@ -39,10 +52,11 @@ const FollowerTotalCard = ({ isComingDown }) => {
 
 FollowerTotalCard.propTypes = {
   isComingDown: PropTypes.bool,
-};
-
-FollowerTotalCard.defaultProps = {
-  isComingDown: false,
+  nickname: PropTypes.string,
+  icon: PropTypes.node,
+  total: PropTypes.string,
+  title: PropTypes.string,
+  quantity: PropTypes.string,
 };
 
 export default FollowerTotalCard;

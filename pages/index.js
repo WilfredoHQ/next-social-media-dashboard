@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Head from "next/head";
-import Icon from "components/atoms/Icon";
 import DarkModeSwitch from "components/atoms/DarkModeSwitch";
 import FollowerTotalCard from "components/molecules/FollowerTotalCard";
+import FollowerOverviewCard from "components/molecules/FollowerOverviewCard";
 
 export const Home = () => {
   const [isDark, setIsDark] = useState(false);
 
   const followers = {
-    total: [
+    totals: [
       {
         nickname: "@nathanf",
         icon: "facebook",
@@ -46,7 +46,7 @@ export const Home = () => {
         topLine: "bg-red-600",
       },
     ],
-    overview: [
+    overviews: [
       {
         title: "Page Views",
         icon: "facebook",
@@ -108,25 +108,54 @@ export const Home = () => {
 
   return (
     <div className={isDark && "dark"}>
-      <div className=" dark:bg-gray-900 min-h-screen">
+      <div className=" dark:bg-gray-900">
         <Head>
           <title>Frontend Mentor | [Challenge Name Here]</title>
           <link rel="icon" href="/favicon-32x32.png" />
         </Head>
-        <main>
-          <DarkModeSwitch
-            isDark={isDark}
-            onClick={() => setIsDark((prevState) => !prevState)}
-          />
-          <FollowerTotalCard
-            nickname="@nathanf"
-            icon={<Icon svg="facebook" classes="w-6 mr-2" />}
-            total="1987"
-            title="Followers"
-            quantity="12"
-            isComingDown={false}
-            topLine="bg-gradient-to-r from-yellow-400 to-pink-400"
-          />
+        <main className="grid gap-10 p-5 container mx-auto">
+          <div className="sm:flex justify-between items-center">
+            <div className="dark:text-white mb-5 sm:mb-0">
+              <h3 className="font-bold text-2xl">Social Media Dasboard</h3>
+              <p className="text-gray-400">Total Followers: 23-004</p>
+            </div>
+            <div className="flex justify-between pt-5 border-t border-gray-500 sm:border-t-0 sm:pt-0">
+              <p className="dark:text-white mr-3">Dark Mode</p>
+              <DarkModeSwitch
+                isDark={isDark}
+                onClick={() => setIsDark((prevState) => !prevState)}
+              />
+            </div>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {followers.totals.map((total) => (
+              <FollowerTotalCard
+                nickname={total.nickname}
+                icon={total.icon}
+                total={total.total}
+                title={total.title}
+                quantity={total.quantity}
+                isComingDown={total.isComingDown}
+                topLine={total.topLine}
+              />
+            ))}
+          </div>
+          <div>
+            <h3 className="dark:text-white font-bold text-2xl">
+              Overview-Today
+            </h3>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {followers.overviews.map((overview) => (
+              <FollowerOverviewCard
+                title={overview.title}
+                icon={overview.icon}
+                total={overview.total}
+                percentage={overview.percentage}
+                isComingDown={overview.isComingDown}
+              />
+            ))}
+          </div>
         </main>
       </div>
     </div>

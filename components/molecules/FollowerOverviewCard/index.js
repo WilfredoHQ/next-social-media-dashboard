@@ -13,7 +13,7 @@ const FollowerOverviewCard = ({
     <BaseCard>
       <figure className="flex justify-between items-center mb-3">
         <figcaption className="dark:text-gray-300">{title} </figcaption>
-        {icon}
+        <Icon svg={icon} classes="w-6 mr-2" />
       </figure>
       <div className="flex justify-between items-center">
         <p className="font-semibold text-4xl dark:text-white">{total}</p>
@@ -40,7 +40,7 @@ const FollowerOverviewCard = ({
 FollowerOverviewCard.propTypes = {
   isComingDown: PropTypes.bool,
   title: PropTypes.string,
-  icon: PropTypes.node,
+  icon: PropTypes.string,
   total: PropTypes.string,
   percentage: PropTypes.string,
 };

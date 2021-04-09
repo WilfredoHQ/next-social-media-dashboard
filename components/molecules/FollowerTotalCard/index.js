@@ -17,7 +17,7 @@ const FollowerTotalCard = ({
         className={[topLine, "h-1 absolute w-full left-0 top-0"].join(" ")}
       ></div>
       <figure className="flex justify-center items-center">
-        {icon}
+        <Icon svg={icon} classes="w-6 mr-2" />
         <figcaption className="font-semibold text-sm dark:text-gray-400">
           {nickname}
         </figcaption>
@@ -52,7 +52,7 @@ const FollowerTotalCard = ({
 FollowerTotalCard.propTypes = {
   isComingDown: PropTypes.bool,
   nickname: PropTypes.string,
-  icon: PropTypes.node,
+  icon: PropTypes.string,
   total: PropTypes.string,
   title: PropTypes.string,
   quantity: PropTypes.string,

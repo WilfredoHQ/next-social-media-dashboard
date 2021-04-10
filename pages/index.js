@@ -107,16 +107,18 @@ export const Home = () => {
   };
 
   return (
-    <div className={isDark && "dark"}>
+    <div className={[isDark && "dark"].join(" ")}>
       <div className=" dark:bg-gray-900">
         <Head>
-          <title>Frontend Mentor | [Challenge Name Here]</title>
+          <title>
+            Frontend Mentor | Social media dashboard with theme switcher
+          </title>
           <link rel="icon" href="/favicon-32x32.png" />
         </Head>
         <main className="grid gap-10 p-5 container mx-auto">
           <div className="sm:flex justify-between items-center">
             <div className="dark:text-white mb-5 sm:mb-0">
-              <h3 className="font-bold text-2xl">Social Media Dasboard</h3>
+              <h2 className="font-bold text-2xl">Social Media Dasboard</h2>
               <p className="text-gray-400">Total Followers: 23-004</p>
             </div>
             <div className="flex justify-between pt-5 border-t border-gray-500 sm:border-t-0 sm:pt-0">
@@ -128,8 +130,9 @@ export const Home = () => {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {followers.totals.map((total) => (
+            {followers.totals.map((total, index) => (
               <FollowerTotalCard
+                key={index}
                 nickname={total.nickname}
                 icon={total.icon}
                 total={total.total}
@@ -141,13 +144,14 @@ export const Home = () => {
             ))}
           </div>
           <div>
-            <h3 className="dark:text-white font-bold text-2xl">
+            <h2 className="dark:text-white font-bold text-2xl">
               Overview-Today
-            </h3>
+            </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {followers.overviews.map((overview) => (
+            {followers.overviews.map((overview, index) => (
               <FollowerOverviewCard
+                key={index}
                 title={overview.title}
                 icon={overview.icon}
                 total={overview.total}

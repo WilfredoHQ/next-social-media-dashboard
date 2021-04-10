@@ -6,7 +6,7 @@ const Icon = ({ svg, classes, title }) => {
       viewBox: "0 0 8 4",
       svg: (
         <>
-          <path fill="#DC414C" fill-rule="evenodd" d="M0 0l4 4 4-4z" />
+          <path fill="#DC414C" fillRule="evenodd" d="M0 0l4 4 4-4z" />
         </>
       ),
     },
@@ -27,9 +27,9 @@ const Icon = ({ svg, classes, title }) => {
         <>
           <defs>
             <linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%">
-              <stop offset="0%" stop-color="#DF4896" />
-              <stop offset="50.913%" stop-color="#EE877E" />
-              <stop offset="100%" stop-color="#FDC366" />
+              <stop offset="0%" stopColor="#DF4896" />
+              <stop offset="50.913%" stopColor="#EE877E" />
+              <stop offset="100%" stopColor="#FDC366" />
             </linearGradient>
           </defs>
           <path
@@ -54,7 +54,7 @@ const Icon = ({ svg, classes, title }) => {
       viewBox: "0 0 8 4",
       svg: (
         <>
-          <path fill="#1EB589" fill-rule="evenodd" d="M0 4l4-4 4 4z" />
+          <path fill="#1EB589" fillRule="evenodd" d="M0 4l4-4 4 4z" />
         </>
       ),
     },

@@ -30,21 +30,21 @@ const FollowerTotalCard = ({
           {title}
         </p>
       </div>
-      <p className="flex justify-center items-center ">
+      <div className="flex justify-center items-center ">
         {isComingDown ? (
           <Icon svg="down" classes="w-2 mr-1" />
         ) : (
           <Icon svg="up" classes="w-2 mr-1" />
         )}
         <p
-          class={[
+          className={[
             isComingDown ? "text-red-500" : "text-green-500",
             "text-sm font-bold",
           ].join(" ")}
         >
           {quantity} Today
         </p>
-      </p>
+      </div>
     </BaseCard>
   );
 };

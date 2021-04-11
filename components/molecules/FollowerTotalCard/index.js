@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import BaseCard from "../../atoms/BaseCard";
-import Icon from "../../atoms/Icon";
 
 const FollowerTotalCard = ({
   isComingDown,
@@ -17,7 +16,7 @@ const FollowerTotalCard = ({
         className={[topLine, "h-1 absolute w-full left-0 top-0"].join(" ")}
       ></div>
       <figure className="flex justify-center items-center">
-        <Icon svg={icon} classes="w-6 mr-2" />
+        <img src={`/${icon}.svg`} alt={icon} className="mr-2" />
         <figcaption className="font-semibold text-sm dark:text-gray-400">
           {nickname}
         </figcaption>
@@ -32,9 +31,9 @@ const FollowerTotalCard = ({
       </div>
       <div className="flex justify-center items-center ">
         {isComingDown ? (
-          <Icon svg="down" classes="w-2 mr-1" />
+          <img src="/icon-down.svg" alt="icon down" className="mr-1" />
         ) : (
-          <Icon svg="up" classes="w-2 mr-1" />
+          <img src="/icon-up.svg" alt="icon up" className="mr-1" />
         )}
         <p
           className={[

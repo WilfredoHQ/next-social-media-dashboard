@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import BaseCard from "../../atoms/BaseCard";
-import Icon from "../../atoms/Icon";
 
 const FollowerOverviewCard = ({
   isComingDown,
@@ -13,15 +12,15 @@ const FollowerOverviewCard = ({
     <BaseCard>
       <div className="flex justify-between items-center mb-3">
         <h3 className="dark:text-gray-300">{title}</h3>
-        <Icon svg={icon} classes="w-6 mr-2" />
+        <img src={`/${icon}.svg`} alt={icon} />
       </div>
       <div className="flex justify-between items-center">
         <p className="font-semibold text-4xl dark:text-white">{total}</p>
         <div className="flex justify-center items-center">
           {isComingDown ? (
-            <Icon svg="down" classes="w-2 mr-1" />
+            <img src="/icon-down.svg" className="mr-2" alt="icon down" />
           ) : (
-            <Icon svg="up" classes="w-2 mr-1" />
+            <img src="/icon-up.svg" className="mr-2" alt="icon up" />
           )}
           <p
             className={[

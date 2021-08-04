@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import BaseCard from "../../atoms/BaseCard";
+import PropTypes from "prop-types";
 
 const FollowerOverviewCard = ({
   isComingDown,

@@ -1,6 +1,6 @@
 import DarkModeSwitch from ".";
 
-export default {
+const config = {
   title: "Atoms/DarkModeSwitch",
   component: DarkModeSwitch,
 };
@@ -8,7 +8,5 @@ export default {
 const Template = (args) => <DarkModeSwitch {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  isDark: false,
-  onClick: undefined,
-};
+
+export default config;

@@ -1,4 +1,5 @@
 import BaseCard from "../../atoms/BaseCard";
+import Image from "next/image";
 import PropTypes from "prop-types";
 
 const FollowerOverviewCard = ({
@@ -12,20 +13,20 @@ const FollowerOverviewCard = ({
     <BaseCard>
       <div className="flex justify-between items-center mb-3">
         <h3 className="dark:text-gray-300">{title}</h3>
-        <img src={`/${icon}.svg`} alt={icon} />
+        <Image src={`/${icon}.svg`} height={20} width={20} alt={icon} />
       </div>
       <div className="flex justify-between items-center">
         <p className="font-semibold text-4xl dark:text-white">{total}</p>
         <div className="flex justify-center items-center">
           {isComingDown ? (
-            <img src="/icon-down.svg" className="mr-2" alt="icon down" />
+            <Image src="/icon-down.svg" height={4} width={8} alt="icon down" />
           ) : (
-            <img src="/icon-up.svg" className="mr-2" alt="icon up" />
+            <Image src="/icon-up.svg" height={4} width={8} alt="icon up" />
           )}
           <p
             className={[
               isComingDown ? "text-red-500" : "text-green-500",
-              "font-semibold",
+              "font-semibold ml-1",
             ].join(" ")}
           >
             {percentage}%

@@ -1,6 +1,6 @@
 import FollowerOverviewCard from ".";
 
-export default {
+const config = {
   title: "Molecules/FollowerOverviewCard",
   component: FollowerOverviewCard,
 };
@@ -14,3 +14,5 @@ Default.args = {
   total: "5462",
   percentage: "2257",
 };
+
+export default config;

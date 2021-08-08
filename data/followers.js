@@ -63,7 +63,7 @@ const followers = {
       title: "Profile Views",
       icon: "icon-instagram",
       total: "52k",
-      percentage: "1375%",
+      percentage: "1375",
       isComingDown: false,
     },
     {
